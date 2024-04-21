@@ -6,7 +6,7 @@ from datetime import date
 import Funcs as f
 from JournalClass import journal
 from tkcalendar import Calendar
-from tkinter import font
+
 
 new_journal=journal()
 
@@ -49,6 +49,8 @@ def selection_changed(event):
     sentenceLabel.config(text=snt)
     new_journal.color=f.color_selector(selection)
     new_journal.mood=selection
+def no_butt():
+    window.destroy()
 
 #DateFrame
 today= date.today()
@@ -84,8 +86,6 @@ Nobutton.grid(row=2,column=0,pady=10,padx=10)
 Nobutton.config(fg='red')
 viewbutton=tkinter.Button(window, text='View my Journals',command=open_calender)
 viewbutton.place(x=150,y=320)
-
-
 window.mainloop()
 
 
